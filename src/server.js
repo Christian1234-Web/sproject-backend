@@ -23,7 +23,8 @@ app.use(routes);
 app.use(express.static(path.join(__dirname, "/upload/images")));
 
 app.get("/", async (req, res) => {
-  res.sendFile(path.resolve("./src/index.html"));
+  res.send("Node is running")
+
 });
 
 const io = new Server(server, {
