@@ -3,7 +3,6 @@ const express = require("express");
 const router = express.Router();
 
 const userRoutes = require("../domains/user");
-const emailRoutes = require("../domains/email_verification_otp");
 const workshopRoutes = require("../domains/workshop");
 const jobRoutes = require("../domains/jobs");
 const applicationRoutes = require("../domains/application");
@@ -15,7 +14,6 @@ const assessmentRoutes = require('../domains/assesment')
 
 
 router.use("/user", userRoutes);
-router.use("/email", emailRoutes);
 router.use("/workshop", workshopRoutes);
 router.use("/job", jobRoutes);
 router.use("/application", applicationRoutes);
