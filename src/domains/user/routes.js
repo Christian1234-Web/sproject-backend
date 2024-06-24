@@ -79,7 +79,7 @@ router.get("/all", authenticate, async (req, res) => {
   }
 });
 // single user
-router.get("/single/:id", authenticate,async (req, res) => {
+router.get("/single/:id",async (req, res) => {
   try {
     const response = await getSingleUser(req.params.id);
     res.json({
@@ -93,10 +93,10 @@ router.get("/single/:id", authenticate,async (req, res) => {
     });
   }
 });
-// get users by nerveId
-router.get("/find/:userId", authenticate,async (req, res) => {
+// get users by Id
+router.get("/find/:userId",async (req, res) => {
   try {
-    const response = await findUserById  (req.params.userId);
+    const response = await findUserById(req.params.userId);
     res.json({
       status: "SUCCESS",
       data: response,

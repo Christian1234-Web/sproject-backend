@@ -202,7 +202,7 @@ const forgetPassword = async ({ email }) => {
     // save otp record
     await sendMail(mailoptions);
     return {
-      nerveId: existingUser.nerveId,
+      userId: existingUser._id,
     };
   } catch (err) {
     throw err;
