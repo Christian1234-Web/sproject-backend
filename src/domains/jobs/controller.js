@@ -32,7 +32,7 @@ const getAllJob = async () => {
   }
 };
 
-const getSingleJob = async () => {
+const getSingleJob = async (_id) => {
   try {
     const job = await Job.findOne({_id});
 
