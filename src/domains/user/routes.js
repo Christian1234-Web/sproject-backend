@@ -38,7 +38,7 @@ router.post("/signup", async (req, res) => {
         email,
         password
       });
-      await createProfile()
+      await createProfile({userId:newUser._id})
       res.json({
         status: "SUCCESS",
         message: "Signup Successful",
