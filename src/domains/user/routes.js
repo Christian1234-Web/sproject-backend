@@ -11,7 +11,6 @@ const {
   findUserById,
 } = require("./controller");
 const router = express.Router();
-const authenticate = require("../../util/authenticate");
 const { createProfile } = require("../profile/controller");
 //signup
 
@@ -64,7 +63,7 @@ router.post("/signin", async (req, res) => {
   }
 });
 // all user
-router.get("/all", authenticate, async (req, res) => {
+router.get("/all", async (req, res) => {
   try {
     const allusers = await getAllUser();
     res.json({
@@ -143,7 +142,7 @@ router.post("/update-password", async (req, res) => {
   }
 });
 // update user
-router.put("/update/:id",authenticate , async (req, res) => {
+router.put("/update/:id" , async (req, res) => {
   try {
     const response = await updateUser(req.params.id, req.body);
 
@@ -160,7 +159,7 @@ router.put("/update/:id",authenticate , async (req, res) => {
   }
 });
 // delete user
-router.delete("/delete/:id",authenticate, async (req, res) => {
+router.delete("/delete/:id", async (req, res) => {
   try {
     const response = await deleteUser(req.params.id);
 
