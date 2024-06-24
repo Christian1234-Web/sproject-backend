@@ -34,7 +34,7 @@ const getAllJob = async () => {
 
 const getSingleJob = async () => {
   try {
-    const job = await Job.find({_id});
+    const job = await Job.findOne({_id});
 
     return job;
   } catch (err) {
