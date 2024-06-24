@@ -9,7 +9,6 @@ const createWorkshop = async (data) => {
       link,
       rate,
       title,
-      title,
       description,
     });
     await workshop.save();

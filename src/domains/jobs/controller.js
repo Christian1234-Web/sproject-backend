@@ -1,7 +1,7 @@
 const Job = require("./model");
 
 const createJob = async (data) => {
-  const { image, tags, about, requirement, title, location ,deadline,workType,} = data;
+  const { image, tags, about, requirement, title, location ,deadline,workType,company,jobType,professionalLevel} = data;
   try {
     const job = new Job({
       image,
@@ -11,7 +11,10 @@ const createJob = async (data) => {
       about,
       title,
       requirement,
-      location
+      location,
+      company,
+      jobType,
+      professionalLevel
     });
     await job.save();
     return job;
